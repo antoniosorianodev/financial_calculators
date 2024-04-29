@@ -1,11 +1,13 @@
 // we are saving the submit button for later use
 let submitButton = document.querySelector("#submitCD");
+let resetButton = document.querySelector("#resetCD");
 
 // this line runs the init function once the page has finished loading
 window.onload = init;
 
 function init() {
     submitButton.addEventListener("click", cd);
+    resetButton.addEventListener("click", reset);
 }
 
 function cd() {
@@ -29,4 +31,11 @@ function cd() {
     let answer = totalValue;
     answer = `If you deposit $${deposit} in a CD that earns ${interestRate}% interest and matures in ${lengthOfTime} year(s), your CD's ending balance will be $${totalValue} and you would have earned $${interestValue} in interest`
     document.querySelector("#cdAnswer").innerHTML = answer;
+}
+
+function reset() {
+    document.querySelector("#cdDeposit").value = null;
+    document.querySelector("#cdInterestRate").value = null;
+    document.querySelector("#cdLengthOfTime").value = null;
+    document.querySelector("#cdAnswer").innerHTML = null;
 }

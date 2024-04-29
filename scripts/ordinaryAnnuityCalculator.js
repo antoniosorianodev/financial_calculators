@@ -1,11 +1,13 @@
 // we are saving the submit button for later use
 let submitButton = document.querySelector("#submitOrdinaryAnnuity");
+let resetButton = document.querySelector("#resetOrdinaryAnnuity");
 
 // this line runs the init function once the page has finished loading
 window.onload = init;
 
 function init() {
     submitButton.addEventListener("click", ordinaryAnnuity);
+    resetButton.addEventListener("click", reset);
 }
 
 function ordinaryAnnuity() {
@@ -26,4 +28,11 @@ function ordinaryAnnuity() {
 
     let answer = `To fund an annuity that pays $${monthlyPayout} monthly for ${years} years and earns and expected ${interestRate}% interest, you would need to invest $${presentValue} today.`
     document.querySelector("#ordinaryAnnuityAnswer").innerHTML = answer;
+}
+
+function reset() {
+    document.querySelector("#ordinaryAnnuityMonthlyPayout").value = null;
+    document.querySelector("#ordinaryAnnuityInterestRate").value = null;
+    document.querySelector("#ordinaryAnnuityLengthOfTime").value = null;
+    document.querySelector("#ordinaryAnnuityAnswer").innerHTML = null;
 }

@@ -1,11 +1,12 @@
 // we are saving the submit button for later use
 let submitButton = document.querySelector("#submitMortgage");
-
+let resetButton = document.querySelector("#resetMortgage");
 // this line runs the init function once the page has finished loading
 window.onload = init;
 
 function init() {
     submitButton.addEventListener("click", mortgage);
+    resetButton.addEventListener("click", reset);
 }
 
 function mortgage() {
@@ -28,4 +29,11 @@ function mortgage() {
 
     let answer = `A $${principal} loan at ${interestRate}% interest for ${loanLength} years would have a $${monthlyPayment}/mo payment with a total interest of $${interestAmount}`
     document.querySelector("#mortgageAnswer").innerHTML = answer;
+}
+
+function reset() {
+    document.querySelector("#mortgagePrincipal").value = null;
+    document.querySelector("#mortgageInterestRate").value = null;
+    document.querySelector("#mortgageLoanLength").value = null;
+    document.querySelector("#mortgageAnswer").innerHTML = null;
 }
