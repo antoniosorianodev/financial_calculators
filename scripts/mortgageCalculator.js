@@ -1,5 +1,7 @@
+// we are saving the submit button for later use
 let submitButton = document.querySelector("#submitMortgage");
 
+// this line runs the init function once the page has finished loading
 window.onload = init;
 
 function init() {
@@ -24,6 +26,6 @@ function mortgage() {
     monthlyPayment = monthlyPayment.toFixed(2);
     interestAmount = interestAmount.toFixed(2);
 
-    answer = `A $${principal} loan at ${interestRate}% interest for ${loanLength} years would have a $${monthlyPayment}/mo payment with a total interest of $${interestAmount}`
+    let answer = `A $${principal} loan at ${interestRate}% interest for ${loanLength} years would have a $${monthlyPayment}/mo payment with a total interest of $${interestAmount}`
     document.querySelector("#mortgageAnswer").innerHTML = answer;
 }
