@@ -8,12 +8,13 @@
     <!-- include Bootstrap CSS file from CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">Navbar</a>
+            <a class="navbar-brand" href="./index.html">CalcBuddy</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,21 +40,25 @@
             </div>
         </div>
     </nav>
-    <div>
-        Number 1: <input type="text" id="number1Field">
-    </div>
-    <div>
-        Number 2: <input type="text" id="number2Field">
-    </div>
-    <div>
-        <button id="addButton">add</button>
-        <button id="subtractButton">subtract</button>
-        <button id="multiplyButton">multiply</button>
-        <button id="divideButton">divide</button>
-    </div>
-    <div>
-        Answer: <input type="text" id="answerField" readonly>
-    </div>
+    <!-- In a perfect world, I would've given this bootstrap elements for webpage consistency -->
+    <!-- But as we code, we choose, and I chose function over form -->
+    <main>
+        <div>
+            Number 1: <input type="number" id="number1Field" autofocus>
+        </div>
+        <div>
+            Number 2: <input type="number" id="number2Field">
+        </div>
+        <div>
+            <button id="addButton">add</button>
+            <button id="subtractButton">subtract</button>
+            <button id="multiplyButton">multiply</button>
+            <button id="divideButton">divide</button>
+        </div>
+        <div>
+            Answer: <input type="number" id="answerField" readonly>
+        </div>
+    </main>
     <!-- include our Bootstrap JS file -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
