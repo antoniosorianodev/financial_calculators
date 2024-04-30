@@ -1,3 +1,4 @@
+"use strict"
 // we are saving the submit button for later use
 let submitButton = document.querySelector("#submitMortgage");
 let resetButton = document.querySelector("#resetMortgage");
@@ -9,11 +10,12 @@ function init() {
     resetButton.addEventListener("click", reset);
 }
 
-function mortgage() {
+function mortgage(event) {
+    event.preventDefault();
     // taking and saving user input
-    let principal = document.querySelector("#mortgagePrincipal").value;
-    let interestRate = document.querySelector("#mortgageInterestRate").value;
-    let loanLength = document.querySelector("#mortgageLoanLength").value;
+    let principal = Number(document.querySelector("#mortgagePrincipal").value);
+    let interestRate = Number(document.querySelector("#mortgageInterestRate").value);
+    let loanLength = Number(document.querySelector("#mortgageLoanLength").value);
 
     // saving modified user input for convenience
     let loanLengthInMonths = loanLength * 12;
@@ -32,8 +34,5 @@ function mortgage() {
 }
 
 function reset() {
-    document.querySelector("#mortgagePrincipal").value = null;
-    document.querySelector("#mortgageInterestRate").value = null;
-    document.querySelector("#mortgageLoanLength").value = null;
     document.querySelector("#mortgageAnswer").innerHTML = null;
 }

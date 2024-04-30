@@ -1,3 +1,4 @@
+"use strict"
 // we are saving the submit button for later use
 let submitButton = document.querySelector("#submitOrdinaryAnnuity");
 let resetButton = document.querySelector("#resetOrdinaryAnnuity");
@@ -10,11 +11,12 @@ function init() {
     resetButton.addEventListener("click", reset);
 }
 
-function ordinaryAnnuity() {
+function ordinaryAnnuity(event) {
+    event.preventDefault();
     // taking and saving user input
-    let monthlyPayout = document.querySelector("#ordinaryAnnuityMonthlyPayout").value;
-    let interestRate = document.querySelector("#ordinaryAnnuityInterestRate").value;
-    let years = document.querySelector("#ordinaryAnnuityLengthOfTime").value;
+    let monthlyPayout = Number(document.querySelector("#ordinaryAnnuityMonthlyPayout").value);
+    let interestRate = Number(document.querySelector("#ordinaryAnnuityInterestRate").value);
+    let years = Number(document.querySelector("#ordinaryAnnuityLengthOfTime").value);
 
     // saving modified user input for convenience
     // 12 compundings per year because it's done monthly
@@ -31,8 +33,5 @@ function ordinaryAnnuity() {
 }
 
 function reset() {
-    document.querySelector("#ordinaryAnnuityMonthlyPayout").value = null;
-    document.querySelector("#ordinaryAnnuityInterestRate").value = null;
-    document.querySelector("#ordinaryAnnuityLengthOfTime").value = null;
     document.querySelector("#ordinaryAnnuityAnswer").innerHTML = null;
 }

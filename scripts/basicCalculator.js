@@ -1,5 +1,5 @@
 "Use strict"
-console.log("It is working :^)");
+let resetButton = document.querySelector("#resetBasic");
 
 window.onload = init;
 
@@ -13,40 +13,49 @@ function init() {
     subtractButton.addEventListener("click", subtract);
     multiplyButton.addEventListener("click", multiply);
     divideButton.addEventListener("click", divide);
+    resetButton.addEventListener("click", reset);
 }
 
-function add() {
+function add(event) {
+    event.preventDefault();
     let number1 = Number(document.querySelector("#number1Field").value);
     let number2 = Number(document.querySelector("#number2Field").value);
 
     let result = number1 + number2;
 
-    document.querySelector("#answerField").value = result;
+    document.querySelector("#answerField").innerHTML = result;
 }
 
-function subtract() {
+function subtract(event) {
+    event.preventDefault();
     let number1 = Number(document.querySelector("#number1Field").value);
     let number2 = Number(document.querySelector("#number2Field").value);
 
     let result = number1 - number2;
 
-    document.querySelector("#answerField").value = result;
+    document.querySelector("#answerField").innerHTML = result;
 }
 
-function multiply() {
+function multiply(event) {
+    event.preventDefault();
     let number1 = Number(document.querySelector("#number1Field").value);
     let number2 = Number(document.querySelector("#number2Field").value);
 
     let result = number1 * number2;
 
-    document.querySelector("#answerField").value = result;
+    document.querySelector("#answerField").innerHTML = result;
 }
 
-function divide() {
+function divide(event) {
+    event.preventDefault();
     let number1 = Number(document.querySelector("#number1Field").value);
     let number2 = Number(document.querySelector("#number2Field").value);
 
     let result = number1 / number2;
 
-    document.querySelector("#answerField").value = result;
+    document.querySelector("#answerField").innerHTML = result;
+}
+
+function reset() {
+    document.querySelector("#answerField").innerHTML = null;
 }
